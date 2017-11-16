@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane fx:id="root" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Pane fx:id="paneToolbar" onMouseDragged="#moveDragged" onMousePressed="#movePressed" onMouseReleased="#moveReleased" prefHeight="50.0" style="-fx-background-color: GREY;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="paneToolbar" onMouseDragged="#moveDragged" onMousePressed="#movePressed" onMouseReleased="#moveReleased" prefHeight="50.0" style="-fx-background-color: GhostWhite;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" onAction="#close" ripplerFill="#ff000040" text=" " AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../TableViewExample/TableView/src/application/images/close_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnMaximize" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" onAction="#maximize" ripplerFill="#00dbff40" text=" " AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fx:id="imgMaximize" fitHeight="150.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/maximizeSize_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnMinimize" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="20.0" onAction="#minimize" ripplerFill="#abffa540" text=" " AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/minimizeWindow_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneContent" layoutY="56.0" prefHeight="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
       <Pane fx:id="paneUp" onMouseDragged="#resizeUpDragged" onMousePressed="#resizeVerticalPressed" prefHeight="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <cursor>
             <Cursor fx:constant="N_RESIZE" />
