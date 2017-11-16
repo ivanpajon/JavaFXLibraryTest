@@ -3,28 +3,55 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+
 import fxwindow.fxmove.FXMove;
 import fxwindow.fxresize.FXResize;
+import fxwindow.fxtoolbar.FXToolbar;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class MainController implements Initializable {
 
-    @FXML private Pane paneToolbar, paneUp, paneRight, paneDown, paneLeft, paneUpLeft, paneUpRight, paneDownRight, paneDownLeft;
+    @FXML private Pane paneUp, paneRight, paneDown, paneLeft, paneUpLeft, paneUpRight, paneDownRight, paneDownLeft;
     
-    @FXML private AnchorPane root;
+    @FXML private AnchorPane root, paneToolbar, paneContent;
+    
+    @FXML private JFXButton btnClose, btnMaximize, btnMinimize;
+    
+    @FXML private ImageView imgMaximize;
     
     private FXMove fxmove;
     private FXResize fxresize;
+    private FXToolbar fxtoolbar;
+    
+    private Image minimizeIcon = new Image(getClass().getResource("icons/minimizeSize_icon.png").toExternalForm());
+    private Image maximizeIcon = new Image(getClass().getResource("icons/maximizeSize_icon.png").toExternalForm());
     
     @Override
 	public void initialize(URL url, ResourceBundle rb) {
     	fxmove = new FXMove(root);
     	fxresize = new FXResize(root, paneUp, paneRight, paneDown, paneLeft, paneUpLeft, paneUpRight, paneDownRight, paneDownLeft);
+    	fxtoolbar = new FXToolbar(root, minimizeIcon, maximizeIcon);
 	}
+    
+    @FXML void close(ActionEvent e) {
+    	fxtoolbar.closeWindow();
+    }
+    
+    @FXML void maximize(ActionEvent e) {
+    	fxtoolbar.maximizeWindow(fxresize, imgMaximize);
+    }
+    
+    @FXML void minimize(ActionEvent e) {
+    	fxtoolbar.minimizeWindow();
+    }
 
     @FXML void moveDragged(MouseEvent e) {
     	fxmove.moveDragged(e);
