@@ -41,6 +41,7 @@ public class MainController implements Initializable {
  		}
  		else {
  			fxmove.dragToCenter(e);
+ 			fxresize.enableResizing();
  		}
  	}
     
