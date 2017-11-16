@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="root" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Pane fx:id="paneToolbar" onMouseDragged="#moveDragged" onMousePressed="#movePressed" onMouseReleased="#moveReleased" prefHeight="50.0" style="-fx-background-color: GREY;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="paneUp" onMouseDragged="#resizeUpDragged" onMousePressed="#resizeVerticalPressed" prefHeight="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="N_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneRight" onMouseDragged="#resizeRightDragged" onMousePressed="#resizeHorizontalPressed" prefWidth="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="E_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneDown" onMouseDragged="#resizeDownDragged" onMousePressed="#resizeVerticalPressed" prefHeight="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="S_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneLeft" onMouseDragged="#resizeLeftDragged" onMousePressed="#resizeHorizontalPressed" prefWidth="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="W_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneUpLeft" onMouseDragged="#resizeUpLeftDragged" onMousePressed="#resizeCornerPressed" prefHeight="10.0" prefWidth="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="NW_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneUpRight" onMouseDragged="#resizeUpRightDragged" onMousePressed="#resizeCornerPressed" prefHeight="10.0" prefWidth="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="NE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneDownRight" onMouseDragged="#resizeDownRightDragged" onMousePressed="#resizeCornerPressed" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="paneDownLeft" onMouseDragged="#resizeDownLeftDragged" onMousePressed="#resizeCornerPressed" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="SW_RESIZE" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>
