@@ -50,7 +50,7 @@ public class MainController implements Initializable {
     }
     
     @FXML void minimize(ActionEvent e) {
-    	fxtoolbar.minimizeWindow();
+    	fxtoolbar.iconifyWindow();
     }
 
     @FXML void moveDragged(MouseEvent e) {
