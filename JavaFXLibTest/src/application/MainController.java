@@ -47,16 +47,19 @@ public class MainController implements Initializable {
     @Override
 	public void initialize(URL url, ResourceBundle rb) {
     	fxthread = new FXThread();
+    	Runnable task = () -> runTask(lblClock);
+		fxthread.setTask(task);
+		fxthread.createThread();
+		
     	fxmove = new FXMove(root);
+    	
     	fxresize = new FXResize(root, paneUp, paneRight, paneDown, paneLeft, paneUpLeft, paneUpRight, paneDownRight, paneDownLeft);
+    	
     	fxtoolbar = new FXToolbar(root, minimizeIcon, maximizeIcon);
 	}
     
     @FXML void clock(ActionEvent event) {
     	if (toggleClock.isSelected()) {
-    		Runnable task = () -> runTask(lblClock);
-    		fxthread.setTask(task);
-    		fxthread.createThread();
     		fxthread.startThread();
     		toggleClock.setText("Detener");
     	}
