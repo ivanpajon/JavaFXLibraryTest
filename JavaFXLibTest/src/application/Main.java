@@ -16,8 +16,8 @@ public class Main extends Application {
 			AnchorPane root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 	        Scene scene = new Scene(root);
 	        primaryStage.setScene(scene);
-	        primaryStage.initStyle(StageStyle.TRANSPARENT);  // Le quita los bordes a la ventana
-	        scene.setFill(Color.TRANSPARENT);  // Le quita los bordes a la ventana
+	        primaryStage.initStyle(StageStyle.TRANSPARENT);
+	        scene.setFill(Color.TRANSPARENT);
 	        primaryStage.setTitle("Test");
 	        primaryStage.show();
 		} catch(Exception e) {
