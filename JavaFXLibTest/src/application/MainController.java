@@ -56,6 +56,8 @@ public class MainController implements Initializable {
     	fxresize = new FXResize(root, paneUp, paneRight, paneDown, paneLeft, paneUpLeft, paneUpRight, paneDownRight, paneDownLeft);
     	
     	fxtoolbar = new FXToolbar(root, minimizeIcon, maximizeIcon);
+    	
+    	
 	}
     
     @FXML void clock(ActionEvent event) {
