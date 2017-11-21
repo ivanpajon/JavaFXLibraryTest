@@ -59,7 +59,7 @@ public class MainController implements Initializable {
     	
     	fxtoolbar = new FXToolbar(root, minimizeIcon, maximizeIcon);
     	
-    	fxstage = new FXStage("C:\\Users\\21609121\\git\\JavaFXLibraryTest\\JavaFXLibTest\\src\\application\\SecondStage.fxml", "Second Stage");
+    	fxstage = new FXStage("src/application/SecondStage.fxml", "Second Stage");
 	}
     
     @FXML void newStage(ActionEvent e) {
