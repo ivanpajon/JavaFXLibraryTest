@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SecondStageController">
+<AnchorPane fx:id="root" onMouseDragged="#moveDragged" onMousePressed="#movePressed" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SecondStageController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="140.0" text="Second Stage" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="140.0">
          <font>
-            <Font size="15.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="14.0" onAction="#close" ripplerFill="#ff4747" text=" " AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
@@ -23,5 +23,6 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <JFXButton fx:id="btnUpdateScene" alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="216.0" onAction="#updateScene" ripplerFill="#41ff34" text="Update Scene" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" />
    </children>
 </AnchorPane>
