@@ -46,8 +46,8 @@ public class SecondStageController implements Initializable {
     }
     
     @FXML void updateScene(ActionEvent e) {
-    	//new FXStage("src/application/Main.fxml").updateScene(e); // This method doesn't need initialization, although, both ways are valid
-    	fxstage.setScene("src/application/Main.fxml");
+    	//new FXStage("src/application/UpdatedScene.fxml").updateScene(e); // This method doesn't need initialization, although, both ways are valid
+    	fxstage.setScene("src/application/UpdatedScene.fxml");
     	fxstage.updateScene(e);
     }
 }
