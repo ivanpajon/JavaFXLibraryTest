@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXToggleButton;
 import fxthread.FXThread;
 import fxwindow.fxmove.FXMove;
 import fxwindow.fxresize.FXResize;
+import fxwindow.fxstage.FXStage;
 import fxwindow.fxtoolbar.FXToolbar;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -28,7 +29,7 @@ public class MainController implements Initializable {
     
     @FXML private AnchorPane root, paneToolbar, paneContent;
     
-    @FXML private JFXButton btnClose, btnMaximize, btnMinimize;
+    @FXML private JFXButton btnClose, btnMaximize, btnMinimize, btnNewStage;
     
     @FXML private ImageView imgMaximize;
     
@@ -40,6 +41,7 @@ public class MainController implements Initializable {
     private FXResize fxresize;
     private FXToolbar fxtoolbar;
     private FXThread fxthread;
+    private FXStage fxstage;
     
     private Image minimizeIcon = new Image(getClass().getResource("icons/minimizeSize_icon.png").toExternalForm());
     private Image maximizeIcon = new Image(getClass().getResource("icons/maximizeSize_icon.png").toExternalForm());
@@ -57,8 +59,13 @@ public class MainController implements Initializable {
     	
     	fxtoolbar = new FXToolbar(root, minimizeIcon, maximizeIcon);
     	
-    	
+    	fxstage = new FXStage("C:\\Users\\21609121\\git\\JavaFXLibraryTest\\JavaFXLibTest\\src\\application\\SecondStage.fxml", "Second Stage");
 	}
+    
+    @FXML void newStage(ActionEvent e) {
+    	fxstage.setUndecorated(true);
+    	fxstage.open();
+    }
     
     @FXML void clock(ActionEvent event) {
     	if (toggleClock.isSelected()) {
