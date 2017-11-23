@@ -30,7 +30,7 @@ public class SecondStageController implements Initializable {
 		
 		fxtoolbar = new FXToolbar(root);
 		
-		fxstage = new FXStage();
+		fxstage = new FXStage(root, "src/application/UpdatedScene.fxml");
 	}
 	
 	@FXML void close(ActionEvent e) {
@@ -46,8 +46,7 @@ public class SecondStageController implements Initializable {
     }
     
     @FXML void updateScene(ActionEvent e) {
-    	//new FXStage("src/application/UpdatedScene.fxml").updateScene(e); // This method doesn't need initialization, although, both ways are valid
-    	fxstage.setScene("src/application/UpdatedScene.fxml");
-    	fxstage.updateScene(e);
+    	//new FXStage(root, "src/application/UpdatedScene.fxml").updateScene(); // This method doesn't need initialization, although, both ways are valid
+    	fxstage.updateScene();
     }
 }
