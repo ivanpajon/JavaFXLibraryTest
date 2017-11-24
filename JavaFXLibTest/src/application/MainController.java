@@ -51,7 +51,6 @@ public class MainController implements Initializable {
     	fxthread = new FXThread();
     	Runnable task = () -> runTask(lblClock);
 		fxthread.setTask(task);
-		fxthread.createThread();
 		
     	fxmove = new FXMove(root);
     	
